@@ -49,9 +49,9 @@ print(top_ten)
 from collections import Counter
 
 x = Counter(num_list)
-mode = x.most_common([1][0])
+m = x.most_common([1][0])
 
-print(mode)
+print(m)
 
 # CHALLENGE PROBLEMS (2pts)
 # TOUGH PROBLEMS, BUT FEW POINTS
@@ -72,6 +72,7 @@ for num in num_list:
                     primes.append(num)
                     primes.sort()
 
+
 print(primes)
 # Find the number of palindromes
 # Hint: This may be easier to do with strings
@@ -81,8 +82,8 @@ palindromes = []
 
 print("Palindrome numbers are:")
 for i in num_list:
-    num=str(i)
-    if("".join(reversed(num))==num):
+    num = str(i)
+    if("".join(reversed(num)) == num):
         palindromes.append(num)
 print(palindromes)
 
