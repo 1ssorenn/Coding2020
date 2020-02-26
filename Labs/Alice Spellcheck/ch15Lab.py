@@ -36,8 +36,7 @@ def Linear():
                     if w == word.upper():
                         there += 1
                 if there == 0:
-                    print("Found on line", line_num)
-                    print(word.upper())
+                    print("The word", word, "on line", line_num, "wasn't found in the dictionary")
                 checked = True
 alice200.close()
 dict.close()
