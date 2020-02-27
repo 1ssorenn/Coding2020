@@ -38,13 +38,11 @@ def Linear():
                 if there == 0:
                     print("The word", word, "on line", line_num, "wasn't found in the dictionary")
                 checked = True
-alice200.close()
-dict.close()
 
 
 
-alice200 = open("AliceInWonderLand200.txt")
-dict = open('dictionary.txt')
+
+
 
 
 def Binary():
@@ -72,6 +70,10 @@ def Binary():
 
 
 Linear()
+alice200.close()
+dict.close()
+alice200 = open("AliceInWonderLand200.txt")
+dict = open('dictionary.txt')
 Binary()
 
 alice200.close()
