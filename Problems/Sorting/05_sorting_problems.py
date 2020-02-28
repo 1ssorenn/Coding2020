@@ -1,6 +1,5 @@
 '''
 Sorting and Intro to Big Data Problems (22pts)
-
 Import the data from NBAStats.py.  The data is all in a single list called 'data'.
 I pulled this data from the csv in the same folder and converted it into a list for you already.
 For all answers, show your work
