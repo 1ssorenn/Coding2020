@@ -39,6 +39,7 @@ field.sort(reverse=True, key=lambda a: a[0])
 best = field[0]
 pt3 = best[0]
 name = best[1]
+print("\n")
 print(name, "scored", pt3, "three point field goals.")
 
 
@@ -48,41 +49,44 @@ print(name, "scored", pt3, "three point field goals.")
 #  WS/48 is also in this data.  It measures win shares per 48 minutes (WS per game).
 #  Who has the highest WS/48 season of all time? (4pts)
 
-def func(x):
-    return sorted(x, key=lambda y: y[0])
 
+wsfe = sorted(data, key=lambda a: a[25])
 
-pos = 0
-ws_list = []
-for i in range(1, len(data)):
-    pos += 1
-    ws_list.append([data[i][-1], pos])
-for i in range(-10, 0):
-    print(i * -1, data[func(ws_list)[i][1]][2])
+for item in wsfe:
+    save = item
+    if item <= save:
+        ea = item
+    else:
+        item = save
 
-
+print("\n\nHighest WS/48:", ea[2], ea[25])
 
 #6  Who is the oldest player of all time?" (4pts)
 
-pos = 0
-my_list = []
-for i in range(1, len(data)):
-    pos += 1
-    my_list.append([data[i][5], pos])
-print("\n\nOldest player:")
-print(data[func(my_list)[-1][1]][2])
+age = sorted(data, key=lambda a: a[4])
 
+for item in age:
+    save = item
+    if item <= save:
+        ea = item
+    else:
+        item = save
+
+print("\n")
+print(ea[2], "age", ea[4])
 #7  Big challenge, few points.  Of the 100 highest scoring single seasons in NBA history, which player has the
 # worst free throw percentage?  Which had the best? (2pts)
 
-pos = 0
-ft_list = []
-for i in range(1, len(data)):
-    pos += 1
-    ft_list.append([data[i][-10], pos])
-print("Highest free throw percentage:", data[func(ft_list)[0][1]][2])
-print("Lowest free throw percentage:", data[func(ft_list)[-1][1]][2])
+pts = sorted(data, key=lambda a: a[-1])
 
+tophun = pts[-100:]
 
+fpt = sorted(tophun, key=lambda a: a[43])
+my_list = []
 
+for item in fpt:
+    x = [item[2], item[43]]
+    my_list.append(x)
 
+print("\n\nBest free throw percentage", my_list[-1])
+print("Worst free throw percentage", my_list[0])
