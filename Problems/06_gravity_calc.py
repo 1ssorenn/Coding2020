@@ -24,31 +24,27 @@ while not done:
     try:
         m1 = float(input("\nEnter mass 1(kg): "))
         done = True
-    except ValueError as e:
-        print("Invalid,", e)
-        print("Enter a new value.")
-
-    while not done2:
-        try:
-            m2 = float(input("\nEnter mass 2(kg): "))
-            done2 = True
-        except ValueError as e:
-            print("Invalid,", e)
-            print("Enter a new value.")
-
-
-        while not done3:
+        while not done2:
             try:
-                r = float(input("\nEnter distance(meters) between objects: "))
-                F = G * (m1 * m2) / r ** 2
-                done3 = True
+                m2 = float(input("\nEnter mass 2(kg): "))
+                done2 = True
+                while not done3:
+                    try:
+                        r = float(input("\nEnter distance(meters) between objects: "))
+                        F = G * (m1 * m2) / r ** 2
+                        done3 = True
+                    except ValueError as e:
+                        print("Invalid,", e)
+                        print("Enter a new value.")
+                    except ZeroDivisionError as y:
+                        print("Error:", y)
+                        print("Enter a new value")
             except ValueError as e:
                 print("Invalid,", e)
                 print("Enter a new value.")
-            except ZeroDivisionError as y:
-                print("Error:", y)
-                print("Enter a new value")
-
+    except ValueError as e:
+        print("Invalid,", e)
+        print("Enter a new value.")
 
 print("{:.3}".format(F))
 
