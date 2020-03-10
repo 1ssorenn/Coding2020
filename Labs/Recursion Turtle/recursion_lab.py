@@ -69,7 +69,7 @@ recur_h(250, 10)
 
 my_screen.clear()
 my_turtle.home()
-
+#  Recur_sq won't run correctly after recur_h, told to turn it in like this
 def recur_sq(x, depth):
     if depth > 0:
         my_turtle.up()
